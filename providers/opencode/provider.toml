@@ -1,11 +1,10 @@
 name = "OpenCode"
 env = ["OPENCODE_API_KEY"]
 npm = "@ai-sdk/openai-compatible"
-# Protocol-specific inference bases (accessed 2026-10-15): `/inference/openai/v1`
-# serves chat completions and responses; Anthropic, Gemini, and SystemOne models
-# override `provider.api` with `/inference/anthropic/v1`,
-# `/inference/google/v1beta`, and `/inference/systemone/v1`.
-# https://opencode.ai/v2/docs/console/api/inference/
+# Every model sets its own `provider.api` for its protocol (accessed 2026-10-15):
+# `/inference/openai/v1`, `/inference/anthropic/v1`, `/inference/google/v1beta`,
+# or `/inference/systemone/v1`. `api` here is required by the schema for
+# `@ai-sdk/openai-compatible`. https://opencode.ai/v2/docs/console/api/inference/
 # Model endpoints: https://opencode.ai/v2/docs/console/models/#endpoints
 api = "https://opencode.ai/inference/openai/v1"
 doc = "https://opencode.ai/v2/docs/console/models/"
